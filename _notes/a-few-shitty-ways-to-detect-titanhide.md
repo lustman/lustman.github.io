@@ -129,7 +129,7 @@ static NTSTATUS NTAPI HookNtClose(
 
 The hook checks whether the handle is valid and whether the OBJ_PROTECT_CLOSE flag is set. On an invalid handle it returns STATUS_INVALID_HANDLE.
 
-There is one caveat. There is a `ProcessHandleCheckingMode` option. It controls the behavior of invalid handle processing (e.g., `NtClose`, `WaitForSingleObject`, `SetEvent`, etc.). When enabled, the kernel generates a UM exception instead of returning a status code.
+There is one caveat. There is a `ProcessHandleCheckingMode` option. It controls the behavior of invalid handle processing (e.g., `NtClose`, `WaitForSingleObject`, `SetEvent`, etc.). When enabled, the kernel generates a UM exception instead of returning a status code. The hook doesn't take this into account, there will be no exception.
 
 Check:
 ```cpp
