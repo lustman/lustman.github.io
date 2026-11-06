@@ -1,0 +1,40 @@
+
+title: "Lustman's bullshit"
+description: "Reverse Engineering Notes"
+
+url: "https://lustman.github.io"
+baseurl: ""
+
+theme: null
+
+collections:
+  notes:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: post
+
+sass:
+  style: compressed
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .github
